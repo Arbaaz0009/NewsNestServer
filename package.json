@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "build": "echo 'building...'",
     "server": "nodemon index.js"
   },
   "author": "arbaz ansari",
