@@ -2,11 +2,14 @@ const mongoose = require("mongoose");
 const express = require("express");
 const dotenv = require("dotenv");
 const User = require("./User.model.js");
+const cors = require("cors");
+
 dotenv.config({ path: "./.env" });
 
 const app = express();
 const PORT = process.env.PORT;
 
+app.use(cors());
 app.use(express.json());
 
 (async () => {
@@ -95,3 +98,4 @@ app.get("/bookmarks", async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
