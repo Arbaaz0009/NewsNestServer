@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "echo 'building...'",
-    "server": "node index.js"
+    "server": "node index.js",
+    "dev": "nodemon index.js"
   },
   "author": "arbaz ansari",
   "license": "ISC",
