@@ -22,6 +22,9 @@ app.use(express.json());
   }
 })();
 
+app.get("/", (req, res) => {
+  res.send("Welcome to the Bookmark API");
+})
 app.post("/register", async (req, res) => {
   try {
     const { name, email, password } = req.body;
