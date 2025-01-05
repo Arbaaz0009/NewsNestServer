@@ -84,7 +84,7 @@ app.post("/bookmark", async (req, res) => {
   }
 });
 
-app.get("/bookmarks", async (req, res) => {
+app.post("/bookmarks", async (req, res) => {
   try {
     const { email } = req.body;
     const user = await User.findOne({ email });
