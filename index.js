@@ -43,11 +43,11 @@ app.post("/login", async (req, res) => {
     const { email, password } = req.body;
     const user = await User.findOne({ email, password });
     if (user) {
-      res.status(200).json({ user, message: "User logged in successfully" });
+      res.status(200).json({ user, message: "User logged in successfully" ,success:true});
     } else {
       res
         .status(404)
-        .json({ error: "User not found", message: "User not found" });
+        .json({ error: "User not found", message: "User not found" ,success:false});
     }
   } catch (error) {
     res.status(500).json({ error: error.message });
