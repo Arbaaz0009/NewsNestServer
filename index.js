@@ -84,6 +84,19 @@ app.post("/bookmark", async (req, res) => {
   }
 });
 
+app.delete("/bookmark", async (req, res) => {
+  try {
+    const { email, id } = req.body;
+    const user = await User.findOne({ email });
+    if (user) {
+      user.bookmarks = user.bookmarks.filter((b) => b.id !== id);
+      await user.save();
+      res.status(200).json({ user });
+    }   
+  } catch (error) {
+    res.status(500).json({ error: error.message }); 
+  }
+});
 app.post("/bookmarks", async (req, res) => {
   try {
     const { email } = req.body;
