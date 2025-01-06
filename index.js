@@ -84,7 +84,7 @@ app.post("/bookmark", async (req, res) => {
   }
 });
 
-app.delete("/bookmark", async (req, res) => {
+app.delete("/remove-bookmark", async (req, res) => {
   try {
     const { email, id } = req.body;
     const user = await User.findOne({ email });
